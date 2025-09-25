@@ -1,0 +1,152 @@
+.navbar {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 15px 10rem !important;
+  background-color: rgb(18, 18, 18);
+  color: rgb(216, 215, 215);
+  //   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  // position: relative !important;
+  // height: 10vh !important;
+  // min-height: 60px !important;   // ✅ 避免太矮
+  // max-height: 120px !important;  // ✅ 避免太高（可選）
+  height: 80px !important;
+  min-height: unset !important;
+  max-height: unset !important;
+  width: 100%;
+  position: fixed !important; /* 固定位置 */
+  top: 0 !important; /* 從上方 0 開始 */
+  left: 0 !important; /* 從左側 0 開始 */
+  z-index: 1000; /* 疊層順序要高，避免被其他元素遮住 */
+
+  /* 往下滑時背景變 80% 不透明 */
+  .scrolled {
+    background-color: rgba(18, 18, 18, 0.8);
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+
+    a {
+      text-decoration: none;
+      //   color: #333;
+      color: rgb(216, 215, 215);
+      display: flex;
+      align-items: center;
+    }
+
+    .img {
+      svg {
+        height: 25px;
+      }
+      margin-right: 8px;
+    }
+  }
+
+  .menu-icon {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+
+    .bar {
+      width: 20px;
+      height: 3px;
+      //   background-color: #333;
+      background-color: rgb(216, 215, 215);
+      transition: all 0.3s ease;
+    }
+
+    .bar.open:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .bar.open:nth-child(2) {
+      opacity: 0;
+    }
+    .bar.open:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0 !important;
+    font-size: 1.2rem !important;
+
+    button {
+      background-color: none;
+      border: none;
+      text-decoration: none;
+      //   color: #333;
+      color: rgb(216, 215, 215);
+      font-weight: 500;
+      font-size: 1.2rem !important;
+
+      &:hover {
+        // color: #007bff;
+        color: white;
+      }
+    }
+    svg {
+      height: 1.5rem !important;
+    }
+
+    li a {
+      text-decoration: none;
+      //   color: #333;
+      color: rgb(216, 215, 215);
+      font-weight: 500;
+      font-size: 1.2rem !important;
+
+      &:hover {
+        color: white;
+        // color: #007bff;
+      }
+    }
+  }
+}
+
+// 手機版樣式 - 移到外面
+@media (max-width: 1210px) {
+  .navbar {
+    padding: 1rem 2rem !important;
+
+    .logo {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+
+      .logo-text {
+        // display: none;
+      }
+    }
+
+    .menu-icon {
+      display: flex;
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 80px;
+      left: 0;
+      right: 0;
+      background-color: rgb(18, 18, 18);
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0;
+      display: none;
+        background-color: none;
+    //   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+      &.active {
+        display: flex;
+      }
+    }
+  }
+}

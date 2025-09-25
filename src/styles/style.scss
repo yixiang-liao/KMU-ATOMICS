@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.navbar-spacer{
+    background-color: black;
+}
+@import './pages/_HomePage.scss';
+
+@import './components/_Navbar.scss';
