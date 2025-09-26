@@ -13,8 +13,8 @@ dayjs.extend(timezone);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <StrictMode>
-    <HashRouter>
+    <BrowserRouter basename="/kmu-atomics">
       <App />
-    </HashRouter>
+    </BrowserRouter>
   </StrictMode>
 );
