@@ -9,6 +9,20 @@
   height: calc(100vh - 80px); /* 滿版高度 - navbar 的高度 */
   width: 100vw;
   overflow: hidden;
+  /* Galaxy 背景層（全覆蓋在底下） */
+  .bg-galaxy {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  /* 讓前景內容在背景之上 */
+  .sidebar,
+  .home-page,
+  .sidebar-toggle {
+    position: relative;
+    z-index: 2;
+  }
 
   .sidebar {
     position: absolute; /* 或 fixed */
@@ -140,7 +154,6 @@
 
   .home-page {
     flex: 1;
-    background-color: black;
     color: white;
 
     display: flex;

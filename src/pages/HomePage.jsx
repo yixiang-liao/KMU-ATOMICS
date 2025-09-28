@@ -1,29 +1,71 @@
 import React, { useState } from "react";
 import { IoCaretForwardCircleSharp, IoSearchCircle } from "react-icons/io5";
 import { FaChevronRight } from "react-icons/fa";
+import Galaxy from "../layouts/Galaxy";
 
 const HomePage = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleSidebar = () => setIsOpen(o => !o);
+  const toggleSidebar = () => setIsOpen((o) => !o);
 
   return (
     <div className="home-container">
+      {/* 背景 Galaxy（全螢幕鋪滿） */}
+      <div className="bg-galaxy">
+        <Galaxy
+          mouseRepulsion={true}
+          mouseInteraction={true}
+          density={1}
+          glowIntensity={0.3}
+          saturation={0}
+          hueShift={140}
+          twinkleIntensity={0.3}
+          rotationSpeed={0.1}
+          repulsionStrength={2}
+          autoCenterRepulsion={0}
+          starSpeed={0.5}
+        />
+      </div>
+
       {/* Sidebar */}
       <div className={`sidebar ${isOpen ? "open" : "collapsed"}`}>
         <div className="sidebar-content">
           <ul>
-            <li><img src="./icon/icon_1genomics-light.png" alt="Genomics" />Genomics</li>
-            <li><img src="./icon/icon_2epigenomics-light.png" alt="Epigenomics" />Epigenomics</li>
-            <li><img src="./icon/icon_3transciptomics-light.png" alt="Transcriptomics" />Transcriptomics</li>
-            <li><img src="./icon/icon_4proteomics-light.png" alt="Proteomics" />Proteomics</li>
-            <li><img src="./icon/icon_5metabolomics-light.png" alt="Metabolomics" />Metabolomics</li>
+            <li>
+              <img src="./icon/icon_1genomics-light.png" alt="Genomics" />
+              Genomics
+            </li>
+            <li>
+              <img src="./icon/icon_2epigenomics-light.png" alt="Epigenomics" />
+              Epigenomics
+            </li>
+            <li>
+              <img
+                src="./icon/icon_3transciptomics-light.png"
+                alt="Transcriptomics"
+              />
+              Transcriptomics
+            </li>
+            <li>
+              <img src="./icon/icon_4proteomics-light.png" alt="Proteomics" />
+              Proteomics
+            </li>
+            <li>
+              <img
+                src="./icon/icon_5metabolomics-light.png"
+                alt="Metabolomics"
+              />
+              Metabolomics
+            </li>
           </ul>
         </div>
 
-        {/* 你原本的底部功能鍵可保留 */}
         <div className="sidebar-button">
-          <button aria-label="Search"><IoSearchCircle /></button>
-          <button aria-label="btn-2"><IoCaretForwardCircleSharp/></button>
+          <button aria-label="Search">
+            <IoSearchCircle />
+          </button>
+          <button aria-label="btn-2">
+            <IoCaretForwardCircleSharp />
+          </button>
         </div>
       </div>
 
@@ -40,10 +82,11 @@ const HomePage = () => {
       {/* 主內容 */}
       <div className="home-page">
         <div className="text-group">
-          <p className="p-1">INTERGRATING TAIWAN MULTI-OMICS DATA</p>
+          {/* 小提醒：Integrating 拼字 */}
+          <p className="p-1">INTEGRATING TAIWAN MULTI-OMICS DATA</p>
           <h1>ATOMICS</h1>
           <p className="p-2">
-            From Discovery to Validation:Empowering Global Biological Insight
+            From Discovery to Validation: Empowering Global Biological Insight
           </p>
         </div>
         <div className="button-group">

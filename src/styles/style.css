@@ -18,9 +18,22 @@
   height: calc(100vh - 80px); /* 滿版高度 - navbar 的高度 */
   width: 100vw;
   overflow: hidden;
+  /* Galaxy 背景層（全覆蓋在底下） */
+  /* 讓前景內容在背景之上 */
   /* ===== 浮動半圓收合按鈕 ===== */
   /* 半圓收合按鈕 */
   /* 狀態控制 */
+}
+.home-container .bg-galaxy {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.home-container .sidebar,
+.home-container .home-page,
+.home-container .sidebar-toggle {
+  position: relative;
+  z-index: 2;
 }
 .home-container .sidebar {
   position: absolute; /* 或 fixed */
@@ -128,7 +141,6 @@
 }
 .home-container .home-page {
   flex: 1;
-  background-color: black;
   color: white;
   display: flex;
   flex-direction: column;
@@ -321,4 +333,9 @@
   .navbar .nav-links.active {
     display: flex;
   }
+}
+.galaxy-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }/*# sourceMappingURL=style.css.map */
